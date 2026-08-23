@@ -41,7 +41,7 @@ const TransmissionButton: FC<TransmissionButtonProps> = ({
       onMouseLeave={stopScramble}
     >
       <ScrambleText
-        text='SIGNAL'
+        text='SIGNALIS'
         startOnLoad
         scramble={scramble}
         className={styles['signal-text']}

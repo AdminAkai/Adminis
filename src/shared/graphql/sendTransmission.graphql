@@ -1,0 +1,3 @@
+mutation SendTransmission($name: String!, $email: String!, $subject: String, $message: String!, $turnstileToken: String!) {
+  SendTransmission(name: $name, email: $email, subject: $subject, message: $message, turnstileToken: $turnstileToken)
+}

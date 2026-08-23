@@ -9,6 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky install",
+    "generate": "graphql-codegen",
     "test": "jest --setupFilesAfterEnv --maxConcurrency=2 --testPathPattern=src/",
     "playwright": "npx playwright test"
   },
@@ -35,6 +36,10 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^7.2.0",
+    "@graphql-codegen/client-preset": "^6.1.3",
+    "@graphql-codegen/typescript": "^6.1.0",
+    "@graphql-codegen/typescript-operations": "^6.1.6",
     "@playwright/test": "^1.62.1",
     "@testing-library/jest-dom": "^6.10.0",
     "@testing-library/react": "^16.3.2",
