@@ -12,6 +12,7 @@ import TransmissionFormHeader from './TransmissionFormHeader'
 
 import useMediaQuery from 'src/shared/hooks/useMediaQuery'
 import { extractFormData } from 'src/shared/utils/formUtils'
+import { Language } from 'src/shared/redux/settingsSlice/settingsInitial'
 import { SendTransmissionDocument } from 'src/shared/graphql/__generated__/graphql'
 
 import {
@@ -22,7 +23,11 @@ import {
 
 import styles from './TransmissionForm.module.css'
 
-const TransmissionForm: FC = () => {
+type TransmissionFormProps = {
+  lang: Language
+}
+
+const TransmissionForm: FC<TransmissionFormProps> = ({ lang }) => {
   const navigate = useNavigate()
 
   const [sendTransmission, { loading }] = useMutation(
@@ -49,7 +54,8 @@ const TransmissionForm: FC = () => {
     const rawData = extractFormData(formData)
 
     try {
-      const validatedFields = TransmissionFormValidation.safeParse(rawData)
+      const validatedFields =
+        TransmissionFormValidation(lang).safeParse(rawData)
 
       if (!validatedFields.success || turnstileToken === '') {
         let errors: { [key: string]: string[] } = {}
@@ -79,18 +85,22 @@ const TransmissionForm: FC = () => {
 
   return (
     <TransmissionSector>
-      <TransmissionFormHeader loading={loading} errors={hasErrors} />
+      <TransmissionFormHeader
+        loading={loading}
+        errors={hasErrors}
+        lang={lang}
+      />
       <form
         className={styles['transmission-form']}
         onSubmit={handleSendTransmission}
       >
         {transmissionFormInputs.map((input, i) => (
           <TransmissionFormInput
-            key={`${input.name}-input`}
+            key={`${input[lang].name}-input`}
             bracket={`0${i + 1}`}
-            error={fieldErrors[input.name]?.[0]}
+            error={fieldErrors[input[Language.EN].name]?.[0]}
             disabled={loading}
-            {...input}
+            {...input[lang]}
           />
         ))}
         <div className={styles['transmission-turnstile']}>

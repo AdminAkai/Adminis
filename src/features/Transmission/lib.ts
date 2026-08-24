@@ -12,3 +12,18 @@ export const transmissionLinks: TransmissionLinkProps[] = [
     linkText: 'AdminAkai',
   },
 ]
+
+export const transmissionTitleTranslations = {
+  transmission: {
+    en: 'TRANSMISSION',
+    jp: '送信',
+  },
+  broadcast: {
+    en: 'BROADCAST YOUR',
+    jp: '放送する',
+  },
+  signal: {
+    en: 'SIGNAL',
+    jp: '電波',
+  },
+}

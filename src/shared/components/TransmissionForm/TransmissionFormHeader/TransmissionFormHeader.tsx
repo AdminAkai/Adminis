@@ -1,16 +1,24 @@
 import { FC, useMemo } from 'react'
 
-import { transmissionFormInputs } from '../lib'
-
-import styles from './TransmissionFormHeader.module.css'
 import ScrambleText from '../../ScrambleText'
 
+import { Language } from 'src/shared/redux/settingsSlice/settingsInitial'
+
+import {
+  transmissionFormHeaderTranslations,
+  transmissionFormInputs,
+} from '../lib'
+
+import styles from './TransmissionFormHeader.module.css'
+
 type TransmissionFormHeaderProps = {
+  lang: Language
   loading?: boolean
   errors?: boolean
 }
 
 const TransmissionFormHeader: FC<TransmissionFormHeaderProps> = ({
+  lang,
   loading,
   errors,
 }) => {
@@ -21,22 +29,29 @@ const TransmissionFormHeader: FC<TransmissionFormHeaderProps> = ({
   }, [loading, errors])
 
   const channelText = useMemo(() => {
-    if (loading) return 'TRANSMITTING. . .'
-    if (errors) return 'CLOSED'
-    return 'OPEN'
-  }, [loading, errors])
+    if (loading)
+      return transmissionFormHeaderTranslations.channelText.transmitting[lang]
+    if (errors)
+      return transmissionFormHeaderTranslations.channelText.closed[lang]
+    return transmissionFormHeaderTranslations.channelText.open[lang]
+  }, [lang, loading, errors])
 
   return (
     <div className={styles['transmission-form-header']}>
       <p
         className={`${styles['transmission-form-header-title']} ${styles[errorStyling]}`}
       >
-        CONTENT / <span>{transmissionFormInputs.length} FIELDS</span>
+        {transmissionFormHeaderTranslations.content[lang]} /{' '}
+        <span>
+          {transmissionFormInputs.length}{' '}
+          {transmissionFormHeaderTranslations.fields[lang]}
+        </span>
       </p>
       <p
         className={`${styles['transmission-form-header-title']} ${styles[errorStyling]}`}
       >
-        [CHANNEL <ScrambleText text={channelText} startOnLoad />]
+        [{transmissionFormHeaderTranslations.channel[lang]}{' '}
+        <ScrambleText text={channelText} startOnLoad />]
       </p>
     </div>
   )

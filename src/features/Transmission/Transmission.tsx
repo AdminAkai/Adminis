@@ -10,7 +10,7 @@ import { Language } from 'src/shared/redux/settingsSlice/settingsInitial'
 import { useAppSelector } from 'src/shared/redux/store'
 import { selectLanguage } from 'src/shared/redux/settingsSlice/settingsSelectors'
 
-import { transmissionLinks } from './lib'
+import { transmissionLinks, transmissionTitleTranslations } from './lib'
 
 import styles from './Transmission.module.css'
 
@@ -22,12 +22,16 @@ const Transmission: FC = () => {
       <div className={styles.transmission}>
         <TransmissionSector>
           <h1 className={styles['transmission-title']}>
-            [<ScrambleText text='SIGNALIS' startOnLoad /> / TRANSMISSION]
+            [<ScrambleText text='SIGNALIS' startOnLoad /> /{' '}
+            {transmissionTitleTranslations.transmission[lang]}]
           </h1>
           <div className={styles['transmission-subtitle']}>
-            <p>BROADCAST YOUR&nbsp;</p>
+            <p>{transmissionTitleTranslations.broadcast[lang]}&nbsp;</p>
             <div>
-              <ScrambleText text='SIGNAL' startOnLoad />
+              <ScrambleText
+                text={transmissionTitleTranslations.signal[lang]}
+                startOnLoad
+              />
               &#46;
             </div>
           </div>
@@ -37,7 +41,7 @@ const Transmission: FC = () => {
             ))}
           </div>
         </TransmissionSector>
-        <TransmissionForm />
+        <TransmissionForm lang={lang} />
         <PageMark>TRANSMISSION / EP-OVA</PageMark>
       </div>
     </div>

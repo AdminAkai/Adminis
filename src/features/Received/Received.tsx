@@ -8,7 +8,8 @@ import TransmissionLink from 'src/shared/components/TransmissionLink'
 import { Language } from 'src/shared/redux/settingsSlice/settingsInitial'
 import { useAppSelector } from 'src/shared/redux/store'
 import { selectLanguage } from 'src/shared/redux/settingsSlice/settingsSelectors'
-import { transmissionLinks } from './lib'
+
+import { transmissionLinks } from '../Transmission/lib'
 
 import styles from './Received.module.css'
 
