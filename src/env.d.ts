@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_GITHUB_API: string
-  // more env variables...
+  // unused for now
+  readonly VITE_API_GATEWAY_URI: string
 }
 
 interface ImportMeta {

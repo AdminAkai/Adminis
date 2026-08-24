@@ -24,9 +24,7 @@ import TransmissionFormHeader from './TransmissionFormHeader'
 const TransmissionForm: FC = () => {
   const isMobile = useMediaQuery('(max-width: 959px)')
 
-  const [sendTransmission, { loading, error, data }] = useMutation(
-    SendTransmissionDocument
-  )
+  const [sendTransmission, { loading }] = useMutation(SendTransmissionDocument)
 
   const [turnstileToken, setTurnstileToken] = useState<string>('')
   const [fieldErrors, setFieldErrors] = useState<{
@@ -42,27 +40,19 @@ const TransmissionForm: FC = () => {
     try {
       const validatedFields = TransmissionFormValidation.safeParse(rawData)
 
-      let errors: { [key: string]: string[] } = {}
-
-      if (!validatedFields.success) {
-        errors = flattenError(validatedFields.error).fieldErrors
-      }
-
-      if (turnstileToken === '')
-        errors['turnstileToken'] = ['Humanity required.']
-
-      console.log(errors)
-
-      if (Object.keys(errors).length !== 0) {
+      if (!validatedFields.success || turnstileToken === '') {
+        let errors: { [key: string]: string[] } = {}
+        if (turnstileToken === '')
+          errors['turnstileToken'] = ['Humanity required.']
+        if (!validatedFields.success)
+          errors = flattenError(validatedFields.error).fieldErrors
         setFieldErrors(errors)
         return
       }
 
       const transmission = { ...validatedFields.data, turnstileToken }
 
-      console.log(transmission)
-
-      // sendTransmission({ variables: transmission})
+      sendTransmission({ variables: transmission })
     } catch (err) {
       console.error(err)
       return
