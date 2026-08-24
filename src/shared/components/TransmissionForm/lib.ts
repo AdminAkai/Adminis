@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { object, string, email, ZodFlattenedError } from 'zod'
 
 import { TransmissionFormInputProps } from './TransmissionFormInput'
 
@@ -11,56 +11,37 @@ export const transmissionFormInputs: Omit<
   {
     name: 'name',
     label: 'NAME',
-    placeholder: 'FLESH LABEL',
+    placeholder: 'DESIGNATION',
   },
   {
     name: 'email',
     label: 'EMAIL',
-    placeholder: 'COMMS IDENTIFIER',
+    placeholder: 'COMMUNICATIONS IDENTIFIER',
     type: 'email',
   },
   {
     name: 'subject',
     label: 'SUBJECT',
-    placeholder: 'CONTENT TOPIC - OPTIONAL',
-    type: 'email',
+    placeholder: 'PURPOSE',
+    type: 'string',
   },
   {
     name: 'message',
     label: 'MESSAGE',
-    placeholder: 'HOW CAN I CONTRIBUTE TO YOUR CAUSE?',
+    placeholder: 'TRANSCRIBED TEXT DATA',
     type: 'textarea',
   },
 ]
 
-export const extractFormData = (formData: FormData) => {
-  const rawData: { [key: string]: unknown } = {}
-
-  for (const [key, value] of formData) {
-    rawData[key] = value
-  }
-
-  return rawData
-}
-
-const TransmissionFormScheme = z.object({
-  name: z.string(),
-  email: z.email(),
-  subject: z.string(),
-  message: z.string(),
+export const TransmissionFormValidation = object({
+  name: string('Invalid designation.').min(1, 'Designation required.'),
+  email: email('Invalid comms identifier.').min(
+    1,
+    'Communications identifier required.'
+  ),
+  subject: string('Invalid content topic.').min(1, 'Required.'),
+  message: string('Invalid content message.').min(
+    1,
+    'Content message required.'
+  ),
 })
-
-export const handleSendTransmission = (formData: FormData) => {
-  const rawData = extractFormData(formData)
-
-  try {
-    const validatedFields = TransmissionFormScheme.safeParse(rawData)
-
-    if (!validatedFields.success) {
-      // handle return error object
-      return
-    }
-  } catch (err) {
-    console.error(err)
-  }
-}

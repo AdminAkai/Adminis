@@ -20,7 +20,10 @@ const Navbar: FC = () => {
       <div className={styles['navbar-options']}>
         <NavLangSetting />
         <IconRenderer />
-        <TransmissionButton hidden={pathname === '/transmission'} />
+        <TransmissionButton
+          text='SIGNALIS'
+          hidden={pathname === '/transmission'}
+        />
       </div>
     </nav>
   )

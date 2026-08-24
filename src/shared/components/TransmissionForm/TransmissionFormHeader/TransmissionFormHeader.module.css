@@ -14,7 +14,11 @@
 }
 
 .transmission-form-header-title span {
-  color: var(--blood-red);
+  color: var(--signalis-blue);
+}
+
+.transmission-form-header-closed span {
+  color: var(--signalis-red) !important;
 }
 
 @media screen and (max-width: 959px) {

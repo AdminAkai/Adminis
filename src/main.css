@@ -3,7 +3,8 @@
   /* Half Life Color Palette */
   --orange: rgba(230, 106, 44);
   --orange-muted: rgba(251, 126, 20, 0.2);
-  --blood-red: rgba(173, 0, 0);
+  --signalis-red: rgba(173, 0, 0);
+  --signalis-blue: rgba(37, 150, 190);
   --dark-gray: rgb(21, 21, 21);
   --gray: rgb(41, 41, 41);
   --light-gray: rgb(78, 82, 81);

@@ -7,6 +7,9 @@ export type TransmissionFormInputProps = {
   label: string
   placeholder: string
   bracket: string
+  disabled?: boolean
+  required?: boolean
+  error?: string
   type?: string
 }
 
@@ -15,30 +18,39 @@ const TransmissionFormInput: FC<TransmissionFormInputProps> = ({
   label,
   placeholder,
   bracket,
+  disabled,
+  required,
+  error,
   type = 'text',
 }) => (
-  <label htmlFor={name} className={styles['transmission-form-input-label']}>
-    {bracket} / {label}
+  <label
+    htmlFor={name}
+    className={`${styles['transmission-form-input-label']} ${error && error !== '' && styles['transmission-form-input-label-error']}`}
+  >
+    <p className={styles['transmission-form-input-label-header']}>
+      {bracket} / {label}
+      {error && error !== '' && <span>&nbsp;/ {error}</span>}
+    </p>
     {type === 'textarea' ? (
       <textarea
         id={name}
+        name={name}
         className={styles['transmission-form-input']}
         placeholder={placeholder}
-        required
+        required={required}
         rows={4}
         maxLength={5000}
-        // disable for now as backend is in progress
-        disabled
+        disabled={disabled}
       />
     ) : (
       <input
         id={name}
+        name={name}
         className={styles['transmission-form-input']}
         placeholder={placeholder}
         type={type}
-        required
-        // disable for now as backend is in progress
-        disabled
+        required={required}
+        disabled={disabled}
       />
     )}
   </label>

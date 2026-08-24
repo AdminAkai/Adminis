@@ -5,9 +5,15 @@
   align-items: flex-start;
   gap: 1rem;
   width: 100%;
-  color: var(--orange);
+  color: var(--signalis-blue);
   text-shadow: 0 8px 28px 
-  color-mix(in oklch, var(--orange) 18%, transparent);
+  color-mix(in oklch, var(--signalis-blue) 18%, transparent);
+}
+
+.transmission-form-input-label-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .transmission-form-input {
@@ -22,7 +28,11 @@
 }
 
 .transmission-form-input-label {
-  color: var(--blood-red);
+  color: var(--signalis-blue);
+}
+
+.transmission-form-input-label-error {
+  color: var(--signalis-red);
 }
 
 @media screen and (max-width: 959px) {

@@ -1,0 +1,19 @@
+.transmission-sector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  width: 30%;
+}
+
+.transmission-sector:has(input:disabled) p span {
+  color: var(--signalis-red);
+}
+
+@media screen and (max-width: 959px) {
+  .transmission-sector {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+}

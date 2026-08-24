@@ -1,7 +1,7 @@
 mutation SendTransmission(
   $name: String!
   $email: String!
-  $subject: String
+  $subject: String!
   $message: String!
   $turnstileToken: String!
 ) {

@@ -1,6 +1,4 @@
-import { CSSProperties, FC, useState } from 'react'
-
-import { Link } from 'react-router-dom'
+import { CSSProperties, FC, SubmitEventHandler, useMemo, useState } from 'react'
 
 import ScrambleText from '../../ScrambleText'
 import BroadcastIcon from '../../IconRenderer/icons/BroadcastIcon'
@@ -14,11 +12,13 @@ type TransmissionButtonProps = {
   hidden?: boolean
   disabled?: boolean
   style?: CSSProperties
+  errors?: boolean
 }
 
 const TransmissionButton: FC<TransmissionButtonProps> = ({
   hidden,
   disabled,
+  errors,
   style,
 }) => {
   const broken = useAppSelector(selectBroken)
@@ -32,23 +32,29 @@ const TransmissionButton: FC<TransmissionButtonProps> = ({
     setScramble(false)
   }
 
+  const TransmissionButtonText = useMemo(
+    () => (errors ? 'RETRY' : 'TRANSMIT'),
+    [errors]
+  )
+
   return (
-    <Link
+    <button
+      type='submit'
       style={{ display: hidden ? 'none' : 'inline-flex', ...style }}
-      to='/transmission'
-      className={`${styles['transmission-button']} ${disabled && styles['transmission-button-disabled']}`}
+      disabled={disabled}
+      className={`${styles['transmission-button']} ${errors && styles['transmission-button-errors']}`}
       onMouseEnter={startScramble}
       onMouseLeave={stopScramble}
     >
       <ScrambleText
-        text='SIGNALIS'
+        text={TransmissionButtonText}
         startOnLoad
         scramble={scramble}
         className={styles['signal-text']}
-        infinite={broken}
+        infinite={broken || disabled}
       />
       <BroadcastIcon />
-    </Link>
+    </button>
   )
 }
 
