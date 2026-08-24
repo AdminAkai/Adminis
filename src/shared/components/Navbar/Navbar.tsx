@@ -6,9 +6,9 @@ import Ticker from 'src/shared/components/Ticker'
 
 import NavbarAdminis from './NavbarAdminis'
 import NavLangSetting from './NavLangSetting'
-import TransmissionButton from './TransmissionButton'
 
 import styles from './navbar.module.css'
+import NavTransmissionLink from './NavTransmissionLink'
 
 const Navbar: FC = () => {
   const { pathname } = useLocation()
@@ -20,10 +20,7 @@ const Navbar: FC = () => {
       <div className={styles['navbar-options']}>
         <NavLangSetting />
         <IconRenderer />
-        <TransmissionButton
-          text='SIGNALIS'
-          hidden={pathname === '/transmission'}
-        />
+        <NavTransmissionLink hidden={pathname === '/transmission'} />
       </div>
     </nav>
   )

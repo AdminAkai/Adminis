@@ -1,4 +1,4 @@
-import { object, string, email, ZodFlattenedError } from 'zod'
+import { object, string, email } from 'zod'
 
 import { TransmissionFormInputProps } from './TransmissionFormInput'
 

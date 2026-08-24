@@ -1,0 +1,46 @@
+.transmission-link {
+  background-color: var(--signalis-blue);
+  border: 1px solid var(--signalis-blue);
+  box-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--signalis-blue) 18%, transparent);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+  color: var(--dark-gray);
+}
+
+
+.transmission-link:visited {
+  text-decoration: none;
+  color: var(--dark-gray);
+}
+
+.transmission-link:hover {
+  transform: translateX(2px);
+}
+
+.transmission-link-broken {
+  color: inherit;
+  background-color: var(--signalis-red);
+  border: 1px solid var(--signalis-red);
+  box-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--signalis-red) 18%, transparent);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 959px) {
+  .signal-text {
+    display: none;
+  }
+}

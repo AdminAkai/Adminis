@@ -1,7 +1,7 @@
-import { CSSProperties, FC, SubmitEventHandler, useMemo, useState } from 'react'
+import { CSSProperties, FC, useMemo, useState } from 'react'
 
-import ScrambleText from '../../ScrambleText'
-import BroadcastIcon from '../../IconRenderer/icons/BroadcastIcon'
+import ScrambleText from '../ScrambleText'
+import BroadcastIcon from '../IconRenderer/icons/BroadcastIcon'
 
 import { useAppSelector } from 'src/shared/redux/store'
 import { selectBroken } from 'src/shared/redux/settingsSlice/settingsSelectors'

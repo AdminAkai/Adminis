@@ -4,7 +4,7 @@ import { flattenError } from 'zod'
 import { Turnstile } from '@marsidev/react-turnstile'
 
 import TransmissionFormInput from './TransmissionFormInput'
-import TransmissionButton from '../Navbar/TransmissionButton'
+import TransmissionButton from '../TransmissionButton'
 
 import useMediaQuery from 'src/shared/hooks/useMediaQuery'
 import { extractFormData } from 'src/shared/utils/formUtils'
