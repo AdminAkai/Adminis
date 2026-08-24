@@ -13,9 +13,16 @@
 }
 
 .transmission-turnstile {
-  height: 48;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.transmission-turnstile span {
+  color: var(--signalis-red);
 }
 
 .transmission-closed {
@@ -25,5 +32,9 @@
 @media screen and (max-width: 959px) {
   .transmission-form {
     height: auto;
+  }
+
+  .transmission-turnstile span {
+    font-size: 12px;
   }
 }

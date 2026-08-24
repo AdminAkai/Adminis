@@ -39,16 +39,30 @@ const TransmissionForm: FC = () => {
     const formData = new FormData(e.currentTarget)
     const rawData = extractFormData(formData)
 
-    console.log(fieldErrors)
-
     try {
       const validatedFields = TransmissionFormValidation.safeParse(rawData)
 
+      let errors: { [key: string]: string[] } = {}
+
       if (!validatedFields.success) {
-        const errors = flattenError(validatedFields.error)
-        setFieldErrors(errors.fieldErrors)
+        errors = flattenError(validatedFields.error).fieldErrors
+      }
+
+      if (turnstileToken === '')
+        errors['turnstileToken'] = ['Human verification required.']
+
+      console.log(errors)
+
+      if (Object.keys(errors).length !== 0) {
+        setFieldErrors(errors)
         return
       }
+
+      const transmission = { ...validatedFields.data, turnstileToken }
+
+      console.log(transmission)
+
+      // sendTransmission({ variables: transmission})
     } catch (err) {
       console.error(err)
       return
@@ -72,7 +86,6 @@ const TransmissionForm: FC = () => {
             key={`${input.name}-input`}
             bracket={`0${i + 1}`}
             error={fieldErrors[input.name]?.[0]}
-            // disabled={loading}
             disabled={loading}
             {...input}
           />
@@ -81,8 +94,11 @@ const TransmissionForm: FC = () => {
           <Turnstile
             siteKey={turnstileKey}
             onSuccess={setTurnstileToken}
-            options={{ theme: 'dark', size: isMobile ? 'compact' : 'flexible' }}
+            options={{ theme: 'dark', size: isMobile ? 'compact' : 'normal' }}
           />
+          {fieldErrors['turnstileToken'] && (
+            <span>{fieldErrors['turnstileToken'][0]}</span>
+          )}
         </div>
         <TransmissionButton
           style={{ alignSelf: 'flex-end' }}
