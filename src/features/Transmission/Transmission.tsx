@@ -2,29 +2,20 @@ import { FC } from 'react'
 
 import PageMark from 'src/shared/components/PageMark/PageMark'
 import TransmissionForm from 'src/shared/components/TransmissionForm'
+import ScrambleText from 'src/shared/components/ScrambleText'
+import TransmissionSector from 'src/shared/components/TransmissionSector'
+import TransmissionLink from 'src/shared/components/TransmissionLink'
 
 import { Language } from 'src/shared/redux/settingsSlice/settingsInitial'
 import { useAppSelector } from 'src/shared/redux/store'
 import { selectLanguage } from 'src/shared/redux/settingsSlice/settingsSelectors'
 
-import styles from './Transmission.module.css'
-import TransmissionLink from 'src/shared/components/TransmissionLink'
 import { transmissionLinks } from './lib'
-import ScrambleText from 'src/shared/components/ScrambleText'
-import TransmissionSector from 'src/shared/components/TransmissionSector'
+
+import styles from './Transmission.module.css'
 
 const Transmission: FC = () => {
-  // const [currentIndex, setCurrentIndex] = useState<number>(0)
-
   const lang: Language = useAppSelector(selectLanguage)
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentIndex((prev) => (prev + 1) % taglineSubjects[lang].length)
-  //   }, 2000)
-
-  //   return () => clearInterval(interval)
-  // }, [])
 
   return (
     <div className={styles['transmission-viewport']}>

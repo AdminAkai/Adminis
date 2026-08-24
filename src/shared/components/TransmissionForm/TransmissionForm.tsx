@@ -1,13 +1,18 @@
 import { FC, SubmitEventHandler, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { flattenError } from 'zod'
+import { useMutation } from '@apollo/client'
 
 import { Turnstile } from '@marsidev/react-turnstile'
 
 import TransmissionFormInput from './TransmissionFormInput'
 import TransmissionButton from '../TransmissionButton'
+import TransmissionSector from '../TransmissionSector'
+import TransmissionFormHeader from './TransmissionFormHeader'
 
 import useMediaQuery from 'src/shared/hooks/useMediaQuery'
 import { extractFormData } from 'src/shared/utils/formUtils'
+import { SendTransmissionDocument } from 'src/shared/graphql/__generated__/graphql'
 
 import {
   transmissionFormInputs,
@@ -16,15 +21,21 @@ import {
 } from './lib'
 
 import styles from './TransmissionForm.module.css'
-import { useMutation } from '@apollo/client'
-import { SendTransmissionDocument } from 'src/shared/graphql/__generated__/graphql'
-import TransmissionSector from '../TransmissionSector'
-import TransmissionFormHeader from './TransmissionFormHeader'
 
 const TransmissionForm: FC = () => {
-  const isMobile = useMediaQuery('(max-width: 959px)')
+  const navigate = useNavigate()
 
-  const [sendTransmission, { loading }] = useMutation(SendTransmissionDocument)
+  const [sendTransmission, { loading }] = useMutation(
+    SendTransmissionDocument,
+    {
+      onCompleted: () => {
+        setFieldErrors({})
+        navigate('/received')
+      },
+    }
+  )
+
+  const isMobile = useMediaQuery('(max-width: 959px)')
 
   const [turnstileToken, setTurnstileToken] = useState<string>('')
   const [fieldErrors, setFieldErrors] = useState<{
@@ -56,6 +67,8 @@ const TransmissionForm: FC = () => {
     } catch (err) {
       console.error(err)
       return
+    } finally {
+      e.target.reset()
     }
   }
 
