@@ -49,7 +49,7 @@ const TransmissionForm: FC = () => {
       }
 
       if (turnstileToken === '')
-        errors['turnstileToken'] = ['Human verification required.']
+        errors['turnstileToken'] = ['Humanity required.']
 
       console.log(errors)
 

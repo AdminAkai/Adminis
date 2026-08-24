@@ -23,6 +23,7 @@
 
 .transmission-turnstile span {
   color: var(--signalis-red);
+  text-align: center;
 }
 
 .transmission-closed {
