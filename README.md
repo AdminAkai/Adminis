@@ -6,6 +6,16 @@ Website deployed on Amazon S3 and Cloudfront, domain from Google Domains, routed
 
 ## Changelog
 
+**08/24/2026 v0.3**:
+
+- Added form validation and stylings
+
+- Added graphql codegen
+
+- Added backend "transmission-api"
+
+- Hooked up backend to frontend
+
 **08/20/2026 v0.21**:
 
 - Added Transmission episode and form
