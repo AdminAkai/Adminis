@@ -28,7 +28,7 @@ export const transmissionFormInputs: Omit<
   {
     name: 'message',
     label: 'MESSAGE',
-    placeholder: 'TRANSCRIBED TEXT DATA',
+    placeholder: 'TRANSCRIBE TEXT DATA',
     type: 'textarea',
   },
 ]
@@ -37,11 +37,8 @@ export const TransmissionFormValidation = object({
   name: string('Invalid designation.').min(1, 'Designation required.'),
   email: email('Invalid comms identifier.').min(
     1,
-    'Communications identifier required.'
+    'Comms identifier required.'
   ),
-  subject: string('Invalid content topic.').min(1, 'Required.'),
-  message: string('Invalid content message.').min(
-    1,
-    'Content message required.'
-  ),
+  subject: string('Invalid purpose.').min(1, 'Purpose required.'),
+  message: string('Invalid text data.').min(1, 'Text data required.'),
 })

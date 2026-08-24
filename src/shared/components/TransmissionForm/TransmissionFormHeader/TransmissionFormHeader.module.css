@@ -15,10 +15,14 @@
 
 .transmission-form-header-title span {
   color: var(--signalis-blue);
+  text-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--signalis-blue) 18%, transparent);
 }
 
 .transmission-form-header-closed span {
   color: var(--signalis-red) !important;
+  text-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--signalis-red) 18%, transparent) !important;
 }
 
 @media screen and (max-width: 959px) {

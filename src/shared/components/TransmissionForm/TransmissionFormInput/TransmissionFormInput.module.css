@@ -8,6 +8,7 @@
   color: var(--signalis-blue);
   text-shadow: 0 8px 28px 
   color-mix(in oklch, var(--signalis-blue) 18%, transparent);
+  transition: transform .2s ease, color .2s ease, color .2s ease, box-shadow .2s ease;
 }
 
 .transmission-form-input-label-header {
@@ -33,6 +34,8 @@
 
 .transmission-form-input-label-error {
   color: var(--signalis-red);
+  text-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--signalis-red) 18%, transparent);
 }
 
 @media screen and (max-width: 959px) {
