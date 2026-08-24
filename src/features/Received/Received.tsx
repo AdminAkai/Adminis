@@ -9,7 +9,12 @@ import { Language } from 'src/shared/redux/settingsSlice/settingsInitial'
 import { useAppSelector } from 'src/shared/redux/store'
 import { selectLanguage } from 'src/shared/redux/settingsSlice/settingsSelectors'
 
-import { transmissionLinks } from '../Transmission/lib'
+import {
+  transmissionLinks,
+  transmissionTitleTranslations,
+} from '../Transmission/lib'
+
+import { receivedTranslation } from './lib'
 
 import styles from './Received.module.css'
 
@@ -21,12 +26,13 @@ const Received: FC = () => {
       <div className={styles.received}>
         <TransmissionSector>
           <h1 className={styles['received-title']}>
-            [<ScrambleText text='SIGNALIS' startOnLoad /> / RECEIVED]
+            [<ScrambleText text='SIGNALIS' startOnLoad /> /{' '}
+            {receivedTranslation[lang]}]
           </h1>
           <div className={styles['received-subtitle']}>
-            <p>TRANSMISSION&nbsp;</p>
+            <p>{transmissionTitleTranslations.transmission[lang]}&nbsp;</p>
             <div>
-              <ScrambleText text='RECEIVED' startOnLoad />
+              <ScrambleText text={receivedTranslation[lang]} startOnLoad />
               &#46;
             </div>
           </div>
