@@ -25,6 +25,12 @@
   color-mix(in oklch, var(--signalis-red) 18%, transparent) !important;
 }
 
+.transmission-form-header-loading span {
+  color: var(--muted) !important;
+  text-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--muted) 18%, transparent) !important;
+}
+
 @media screen and (max-width: 959px) {
   .transmission-form-header {
     padding: 0;

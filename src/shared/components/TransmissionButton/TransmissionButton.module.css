@@ -40,11 +40,6 @@
   cursor: pointer;
 }
 
-/* .transmission-button:visited {
-  text-decoration: none;
-  color: var(--dark-gray)
-} */
-
 .transmission-button:hover {
   transform: translateX(2px);
 }

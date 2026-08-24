@@ -66,7 +66,7 @@ const TransmissionForm: FC = () => {
 
   return (
     <TransmissionSector>
-      <TransmissionFormHeader disabled={loading} errors={fieldErrors} />
+      <TransmissionFormHeader loading={loading} errors={hasErrors} />
       <form
         className={styles['transmission-form']}
         onSubmit={handleSendTransmission}
@@ -92,7 +92,7 @@ const TransmissionForm: FC = () => {
         </div>
         <TransmissionButton
           style={{ alignSelf: 'flex-end' }}
-          disabled={loading}
+          loading={loading}
           errors={hasErrors}
         />
       </form>

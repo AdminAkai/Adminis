@@ -7,10 +7,6 @@
   width: 30%;
 }
 
-.transmission-sector:has(input:disabled) p span {
-  color: var(--signalis-red);
-}
-
 @media screen and (max-width: 959px) {
   .transmission-sector {
     width: 100%;

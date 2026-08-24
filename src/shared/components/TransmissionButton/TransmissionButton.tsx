@@ -10,14 +10,14 @@ import styles from './TransmissionButton.module.css'
 
 type TransmissionButtonProps = {
   hidden?: boolean
-  disabled?: boolean
+  loading?: boolean
   style?: CSSProperties
   errors?: boolean
 }
 
 const TransmissionButton: FC<TransmissionButtonProps> = ({
   hidden,
-  disabled,
+  loading,
   errors,
   style,
 }) => {
@@ -32,16 +32,16 @@ const TransmissionButton: FC<TransmissionButtonProps> = ({
     setScramble(false)
   }
 
-  const TransmissionButtonText = useMemo(
-    () => (errors ? 'RETRY' : 'TRANSMIT'),
-    [errors]
-  )
+  const TransmissionButtonText = useMemo(() => {
+    if (errors) return 'RETRY'
+    return 'TRANSMIT'
+  }, [loading, errors])
 
   return (
     <button
       type='submit'
       style={{ display: hidden ? 'none' : 'inline-flex', ...style }}
-      disabled={disabled}
+      disabled={loading}
       className={`${styles['transmission-button']} ${errors && styles['transmission-button-errors']}`}
       onMouseEnter={startScramble}
       onMouseLeave={stopScramble}
@@ -51,7 +51,7 @@ const TransmissionButton: FC<TransmissionButtonProps> = ({
         startOnLoad
         scramble={scramble}
         className={styles['signal-text']}
-        infinite={broken || disabled}
+        infinite={broken || loading}
       />
       <BroadcastIcon />
     </button>

@@ -28,8 +28,9 @@
   border-bottom: 1px solid var(--muted);
 }
 
-.transmission-form-input-label {
-  color: var(--signalis-blue);
+.transmission-form-input-label:has(input:disabled),
+.transmission-form-input-label:has(textarea:disabled) {
+  color: var(--muted);
 }
 
 .transmission-form-input-label-error {
