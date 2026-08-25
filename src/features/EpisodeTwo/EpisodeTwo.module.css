@@ -1,22 +1,19 @@
-.episode-hate {
-  width: 100%;
+.ep-two {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  font-size: 2rem;
-  text-align: left;
-  overflow: hidden;
-  padding-left: 15%;
-  padding-right: 15%;
-}
-
-.speaker {
-  align-self: flex-end;
+  height: auto;
+  width: 100%;
+  font-size: 8rem;
+  color: var(--text-primary);
+  text-align: center;
 }
 
 @media screen and (max-width: 959px) {
-  .episode-hate {
-    font-size: 12px;
+  .ep-two {
+    min-height: auto;
+    height: auto;
+    font-size: 2rem;
   }
 }

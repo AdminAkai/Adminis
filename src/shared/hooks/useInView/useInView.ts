@@ -1,9 +1,9 @@
 import { RefObject, useEffect, useRef, useState } from 'react'
 
-const useInView = (
+const useInView = <T extends HTMLElement>(
   options = { threshold: 0.2 }
-): [RefObject<HTMLElement | null>, boolean] => {
-  const ref = useRef<HTMLElement>(null)
+): [RefObject<T | null>, boolean] => {
+  const ref = useRef<T>(null)
   const [isInView, setIsInView] = useState<boolean>(false)
 
   useEffect(() => {
