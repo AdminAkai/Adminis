@@ -1,0 +1,45 @@
+.ep-one {
+  font-size: 8rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.ep-one-subtext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ep-one-tagline {
+  font-size: 2rem;
+  color: white;
+  text-align: left;
+  letter-spacing: 0.16em;
+}
+
+.ep-one-construction {
+  font-size: 1rem;
+  color: var(--text-primary);
+  text-align: left;
+  letter-spacing: 0.16em;
+}
+
+@media screen and (max-width: 959px) {
+  .ep-one {
+    min-height: auto;
+    height: auto;
+    font-size: 2rem;
+  }
+
+  .ep-one-tagline {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .ep-one-construction {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+}

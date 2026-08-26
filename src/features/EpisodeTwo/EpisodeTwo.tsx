@@ -1,42 +1,64 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 
-import HateMonologue from 'src/shared/components/HateMonologue'
 import PageMark from 'src/shared/components/PageMark/PageMark'
 import Section from 'src/shared/components/Section/Section'
-import Redacted from 'src/shared/components/Redacted'
+
+import useInView from 'src/shared/hooks/useInView'
 
 import { Language } from 'src/shared/redux/settingsSlice/settingsInitial'
+import { useAppSelector } from 'src/shared/redux/store'
 import { selectLanguage } from 'src/shared/redux/settingsSlice/settingsSelectors'
-import { useAppDispatch, useAppSelector } from 'src/shared/redux/store'
-import { setBroken } from 'src/shared/redux/settingsSlice/settingsSlice'
-import useInView from 'src/shared/hooks/useInView'
 
 import styles from './EpisodeTwo.module.css'
 
 const EpisodeTwo: FC = () => {
-  const dispatch = useAppDispatch()
-
   const lang: Language = useAppSelector(selectLanguage)
 
-  const [ref, isInView] = useInView()
-
-  useEffect(() => {
-    dispatch(setBroken(isInView))
-
-    return () => {
-      dispatch(setBroken(false))
-    }
-  }, [isInView])
+  const [ref, isInView] = useInView<HTMLDivElement>()
 
   return (
-    <Section ref={ref}>
-      <div className={styles['episode-hate']}>
-        <HateMonologue scrambling={isInView} lang={lang} />
-        <Redacted className={styles.speaker}>
-          I HAVE NO MOUTH, AND I MUST SCREAM
-        </Redacted>
+    <Section style={{ height: 'auto', minHeight: 'initial' }}>
+      <div ref={ref} className={styles['ep-two']}>
+        <div
+          style={{
+            border: '1px solid blue',
+            position: isInView ? 'fixed' : 'initial',
+            top: isInView ? '50%' : '',
+            left: isInView ? '50%' : '',
+            transform: 'translate(-50%, -50%)',
+            alignSelf: 'flex-start',
+          }}
+        >
+          test
+        </div>
+        <ul style={{ width: '100%', height: 'auto' }}>
+          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+            test
+          </li>
+          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+            test
+          </li>
+          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+            test
+          </li>
+          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+            test
+          </li>
+          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+            test
+          </li>
+          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+            test
+          </li>
+          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+            test
+          </li>
+          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+            test
+          </li>
+        </ul>
       </div>
-      <PageMark>HATE / EP-02</PageMark>
+      <PageMark>SERVICES / EP-02</PageMark>
     </Section>
   )
 }
