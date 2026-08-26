@@ -47,6 +47,9 @@ const TransmissionForm: FC<TransmissionFormProps> = ({ lang }) => {
     [key: string]: string[] | undefined
   }>({})
 
+  console.log(fieldErrors)
+  console.log(turnstileToken)
+
   const handleSendTransmission: SubmitEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
     setFieldErrors({})
@@ -59,10 +62,11 @@ const TransmissionForm: FC<TransmissionFormProps> = ({ lang }) => {
 
       if (!validatedFields.success || turnstileToken === '') {
         let errors: { [key: string]: string[] } = {}
-        if (turnstileToken === '')
-          errors['turnstileToken'] = ['Humanity required.']
+        console.log('turnstiletoken', turnstileToken === '')
         if (!validatedFields.success)
           errors = flattenError(validatedFields.error).fieldErrors
+        if (turnstileToken === '')
+          errors['turnstileToken'] = ['Humanity required.']
         setFieldErrors(errors)
         return
       }

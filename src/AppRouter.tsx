@@ -2,7 +2,7 @@ import { FC, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Main from 'src/features/Main'
 
-import TestStage from './features/TestStage'
+// import TestStage from './features/TestStage'
 
 // Routes
 const Landing = lazy(() => import('src/features/Landing'))
@@ -16,7 +16,7 @@ const AppRouter: FC = () => (
         <Route index element={<Landing />} />
         <Route path='/transmission' element={<Transmission />} />
         <Route path='/received' element={<Received />} />
-        <Route path='/test' element={<TestStage />} />
+        {/* <Route path='/test' element={<TestStage />} /> */}
       </Route>
     </Routes>
   </BrowserRouter>
