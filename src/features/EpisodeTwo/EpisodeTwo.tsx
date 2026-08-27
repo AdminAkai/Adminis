@@ -10,6 +10,8 @@ import { useAppSelector } from 'src/shared/redux/store'
 import { selectLanguage } from 'src/shared/redux/settingsSlice/settingsSelectors'
 
 import styles from './EpisodeTwo.module.css'
+import ScrambleText from 'src/shared/components/ScrambleText'
+import AbilitiesCard from 'src/shared/components/AbilitiesCard'
 
 const EpisodeTwo: FC = () => {
   const lang: Language = useAppSelector(selectLanguage)
@@ -20,43 +22,67 @@ const EpisodeTwo: FC = () => {
     <Section style={{ height: 'auto', minHeight: 'initial' }}>
       <div ref={ref} className={styles['ep-two']}>
         <div
+          className={styles['ep-two-sector']}
           style={{
-            border: '1px solid blue',
             position: isInView ? 'fixed' : 'initial',
             top: isInView ? '50%' : '',
-            left: isInView ? '50%' : '',
-            transform: 'translate(-50%, -50%)',
-            alignSelf: 'flex-start',
+            left: isInView ? '25%' : '',
+            opacity: isInView ? '100%' : '0',
           }}
         >
-          test
+          <h1 className={styles['transmission-title']}>
+            [<ScrambleText text='Abilities' startOnLoad={isInView} />{' '}
+            /&nbsp;Services]
+          </h1>
+          <div className={styles['transmission-subtitle']}>
+            WHAT I CAN DO FOR&nbsp;
+            <div>
+              <ScrambleText text='YOU' startOnLoad />
+              &#46;
+            </div>
+          </div>
+          <div className={styles['ep-two-tag']}>
+            <ScrambleText
+              text='One obsessor. Many obsessions.'
+              startOnLoad
+              lang={lang}
+            />
+          </div>
         </div>
-        <ul style={{ width: '100%', height: 'auto' }}>
-          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 'clamp(60px, 19vh, 180px)',
+            width: '40%',
+            marginTop: '18%',
+          }}
+        >
+          <AbilitiesCard />
+          <div style={{ height: 400, width: 400, border: '1px solid white' }}>
             test
-          </li>
-          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+          </div>
+          <div style={{ height: 400, width: 400, border: '1px solid white' }}>
             test
-          </li>
-          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+          </div>
+          <div style={{ height: 400, width: 400, border: '1px solid white' }}>
             test
-          </li>
-          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+          </div>
+          <div style={{ height: 400, width: 400, border: '1px solid white' }}>
             test
-          </li>
-          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+          </div>
+          <div style={{ height: 400, width: 400, border: '1px solid white' }}>
             test
-          </li>
-          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+          </div>
+          <div style={{ height: 400, width: 400, border: '1px solid white' }}>
             test
-          </li>
-          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
+          </div>
+          <div style={{ height: 400, width: 400, border: '1px solid white' }}>
             test
-          </li>
-          <li style={{ height: 400, width: 400, border: '1px solid white' }}>
-            test
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       <PageMark>SERVICES / EP-02</PageMark>
     </Section>

@@ -1,4 +1,5 @@
 .ep-two {
+  padding: 0 4rem;
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -8,6 +9,71 @@
   font-size: 8rem;
   color: var(--text-primary);
   text-align: center;
+}
+
+.ep-two-sector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  width: 30%;
+  transition: opacity 500ms ease;
+  transform: translate(-50%, -50%);
+  padding: 0 2rem;
+}
+
+.transmission-title {
+  font-size: 1rem;
+  text-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--orange) 18%, transparent);
+  color: var(--orange);
+  justify-self: flex-start;
+}
+
+.transmission-title span {
+  color: var(--signalis-blue);
+}
+
+.transmission-subtitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  font-size: 4rem;
+  text-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--lightest-gray) 18%, transparent);
+  color: var(--lightest-gray);
+}
+
+.transmission-subtitle span {
+  color: var(--signalis-blue);
+}
+
+.ep-two-tag {
+  font-size: 1rem;
+  color: var(--text-primary);
+  text-align: left;
+  letter-spacing: 0.16em;
+}
+
+.transmission-viewport:has(mark:first-of-type) .transmission-title span,
+.transmission-viewport:has(mark:first-of-type) .transmission-subtitle span {
+  color: var(--signalis-red);
+  text-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--signalis-red) 18%, transparent);
+}
+
+.transmission-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 2rem;
+  color: var(--lightest-gray);
+  gap: 1rem;
 }
 
 @media screen and (max-width: 959px) {

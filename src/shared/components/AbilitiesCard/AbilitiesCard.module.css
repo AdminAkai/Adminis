@@ -1,0 +1,120 @@
+.abilities-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px black, 2px 2px 0px white inset;
+  opacity: 1;
+  transform: none;
+  font-size: 2rem;
+  height: 480px;
+  width: 600px;
+  background-color: var(--windows-gray);
+  padding: 4px;
+  border-radius: 1px;
+}
+
+.abilities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  background-color: var(--windows-blue);
+  color: white;
+  border-radius: 1px;
+  padding: 2px 6px;
+}
+
+.abilities-subheader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  color: var(--dark-gray);
+  border-radius: 1px;
+  padding: 2px 6px;
+  gap: 2rem;
+}
+
+.abilities-subheader p {
+  letter-spacing: 0.02em;
+}
+
+.abilities-subheader span {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.abilities-control-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.abilities-control {
+  background-color: var(--windows-gray);
+  padding: 3px 2px 2px 3px;
+  color: var(--dark-gray);
+  box-shadow: 
+  2px 2px 0px var(--dark-gray),
+  1px 1px 0px var(--lightest-gray) inset;
+}
+
+.abilities-summary-container {
+  padding: 0 4px;
+}
+
+.abilities-summary {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  gap: 1rem;
+  padding: 2px 6px;
+  background-color: white;
+  border-radius: 1px;
+  box-shadow:
+  -1px -1px 0px var(--windows-gray) inset,
+  1px 1px 0px var(--dark-gray) inset;
+}
+
+.abilities-summary-header {
+  font-size: 2rem;
+  width: 100%;
+  color: var(--signalis-blue);
+  text-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--signalis-blue) 18%, transparent);
+}
+
+.abilities-summary-content {
+  align-self: flex-start;
+  font-size: 1rem;
+  color: var(--dark-gray);
+}
+
+.abilities-summary-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+
+.abilities-summary-list-item {
+  width: 100%;
+  font-size: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  color: var(--dark-gray)
+}
