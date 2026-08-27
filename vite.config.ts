@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { FontaineTransform } from 'fontaine'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,6 +9,10 @@ export default defineConfig({
       babel: {
         plugins: [['babel-plugin-react-compiler']],
       },
+    }),
+    FontaineTransform.vite({
+      fallbacks: ['Courier New', 'monospace'],
+      resolvePath: (id) => new URL(`./public${id}`, import.meta.url),
     }),
   ],
   resolve: {

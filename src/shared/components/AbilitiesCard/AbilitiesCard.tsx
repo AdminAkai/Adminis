@@ -2,6 +2,8 @@ import { FC } from 'react'
 
 import styles from './AbilitiesCard.module.css'
 import { WindowControlIcon } from '../IconRenderer/icons/WindowControlIcon'
+import AbilitiesCardHeader from './AbilitiesCardHeader'
+import AbilitiesCardSubheader from './AbilitiesCardSubheader'
 
 export type AbilitiesCardType = {
   cardHeader: string
@@ -18,34 +20,8 @@ const AbilitiesCard: FC<AbilitiesCardType> = ({
 }) => {
   return (
     <div className={styles['abilities-card']}>
-      <header className={styles['abilities-header']}>
-        <p>services#consulting-advisory</p>
-        <div className={styles['abilities-control-section']}>
-          <div className={styles['abilities-control']}>
-            <WindowControlIcon variant='minimize' size={16} />
-          </div>
-          <div className={styles['abilities-control']}>
-            <WindowControlIcon variant='maximize' size={16} />
-          </div>
-          <div className={styles['abilities-control']}>
-            <WindowControlIcon variant='close' size={16} />
-          </div>
-        </div>
-      </header>
-      <header className={styles['abilities-subheader']}>
-        <p>
-          <span>F</span>ile
-        </p>
-        <p>
-          <span>E</span>dit
-        </p>
-        <p>
-          <span>S</span>earch
-        </p>
-        <p>
-          <span>H</span>elp
-        </p>
-      </header>
+      <AbilitiesCardHeader title='services#consulting-advisory' />
+      <AbilitiesCardSubheader />
       <div className={styles['abilities-summary-container']}>
         <summary className={styles['abilities-summary']}>
           <h1 className={styles['abilities-summary-header']}>
