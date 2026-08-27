@@ -68,6 +68,8 @@
 
 .abilities-summary-container {
   padding: 0 4px;
+  height: 100%;
+  width: 100%;
 }
 
 .abilities-summary {
@@ -76,6 +78,7 @@
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
+  height: calc(100% - 16px);
   text-align: left;
   gap: 1rem;
   padding: 2px 6px;
