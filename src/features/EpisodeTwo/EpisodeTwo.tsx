@@ -30,7 +30,7 @@ const EpisodeTwo: FC = () => {
   )
 
   return (
-    <Section style={{ height: 'auto', minHeight: 'initial' }}>
+    <Section style={{ height: 'auto', minHeight: 'auto' }}>
       <div ref={ref} className={styles['ep-two']}>
         <div
           className={styles['ep-two-sector']}
@@ -42,8 +42,8 @@ const EpisodeTwo: FC = () => {
           }}
         >
           <h1 className={styles['transmission-title']}>
-            [<ScrambleText text='Abilities' startOnLoad={isInView} />{' '}
-            /&nbsp;Services]
+            [<ScrambleText text='Abilities' startOnLoad={isInView} />
+            &nbsp; /&nbsp;Services]
           </h1>
           <div className={styles['transmission-subtitle']}>
             WHAT I CAN DO FOR&nbsp;
