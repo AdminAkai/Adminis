@@ -1,4 +1,4 @@
-.abilities-header {
+.services-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,14 +10,14 @@
   padding: 2px 6px;
 }
 
-.abilities-control-section {
+.services-control-section {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   gap: 4px;
 }
 
-.abilities-control {
+.services-control {
   background-color: var(--windows-gray);
   padding: 3px 2px 2px 3px;
   color: var(--dark-gray);
@@ -27,7 +27,7 @@
 }
 
 @media screen and (max-width: 959px) {
-  .abilities-header {
+  .services-header {
     font-size: 12px;
   }
 }

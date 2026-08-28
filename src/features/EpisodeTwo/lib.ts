@@ -1,6 +1,6 @@
-import { AbilitiesCardType } from 'src/shared/components/AbilitiesCard'
+import { ServicesCardType } from 'src/shared/components/ServicesCard'
 
-export const AbilitiesCards: AbilitiesCardType[] = [
+export const ServicesCards: ServicesCardType[] = [
   {
     cardHeader: 'services#engineering',
     summaryHeader: 'Engineering',
