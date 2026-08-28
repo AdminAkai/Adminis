@@ -37,15 +37,15 @@ export const AbilitiesCards: AbilitiesCardType[] = [
     ],
   },
   {
-    cardHeader: 'services#consulting-advisory',
-    summaryHeader: 'Consulting & Advisory',
+    cardHeader: 'services#all-companies',
+    summaryHeader: 'All Companies',
     summaryContent:
-      'Decide what to build before it gets expensive. We pressure-test the roadmap and define the outcome worth shipping.',
+      'From seed stage startups to massive corporations, I have a wide breadth of experience with it all.',
     summaryListItems: [
-      'Product Strategy',
-      'Roadmap and Priorities',
-      'Competitive Teardowns',
-      'Architecture and Technical Review',
+      'Seed stage startups and even Series A/B.',
+      'Massive corporations and enterprise software.',
+      'B2B, B2C, SaaS, CRP, ERP, and more.',
+      "Even if you're just beginning your grand idea.",
     ],
   },
   {
