@@ -1,0 +1,22 @@
+.abilities-card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(60px, 19vh, 180px);
+  width: 40%;
+  margin-top: 30dvh;
+  margin-bottom: 30dvh;
+}
+
+.abilities-card-section article:last-of-type {
+  filter: invert() !important;
+}
+
+@media screen and (max-width: 959px) {
+  .abilities-card-section {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 180px;
+  }
+}

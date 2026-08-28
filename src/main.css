@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Fixedsys Excelsior';
+  src: url('/fonts/FSEX300.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   font-family: ui-monospace, "SF Mono", monospace;
   /* Half Life Color Palette */
@@ -9,6 +17,9 @@
   --gray: rgb(41, 41, 41);
   --light-gray: rgb(78, 82, 81);
   --lightest-gray: rgb(202, 211, 209);
+  --windows-gray: rgba(192, 192, 192);
+  --windows-dark-gray: rgba(128, 128, 128);
+  --windows-blue: rgba(1, 1, 127);
 }
 
 [data-colormode='light'] {
@@ -25,6 +36,10 @@
   --text-primary: var(--orange);
   --text-secondary: var(--gray);
   --muted: var(--light-gray);
+}
+
+::selection {
+  background-color: var(--signalis-red);
 }
 
 *,

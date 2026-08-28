@@ -1,0 +1,14 @@
+.abilities-summary-list-item {
+  width: 100%;
+  font-size: 1rem;
+  list-style: inside;
+  margin: 0;
+  color: var(--dark-gray)
+}
+
+
+@media screen and (max-width: 959px) {
+  .abilities-summary-list-item {
+    font-size: 12px;
+  }
+}
