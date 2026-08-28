@@ -6,6 +6,12 @@ Website deployed on Amazon S3 and Cloudfront, domain from Google Domains, routed
 
 ## Changelog
 
+**08/28/2026 v0.4**:
+
+- Released complete version of Episode 2 (English)
+
+- Will create Japanese translation in next update
+
 **08/24/2026 v0.31**:
 
 - Finalized Transmission route for build
