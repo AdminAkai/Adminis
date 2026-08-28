@@ -8,6 +8,7 @@
   outline: inherit;
   height: 24px;
   width: 24px;
+  width: 100%;
 }
 
 @media screen and (max-width: 959px) {
