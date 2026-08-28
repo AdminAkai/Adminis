@@ -59,7 +59,7 @@
 
 @media screen and (max-width: 959px) {
   .abilities-card {
-    height: clamp(180px, 400px, 600px);
+    height: clamp(180px, 480px, 600px);
     width: clamp(240px, 300px, 600px);
     font-size: 1rem;
   }
