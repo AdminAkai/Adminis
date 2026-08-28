@@ -1,9 +1,11 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 
 import { WindowControlIcon } from '../../IconRenderer/icons/WindowControlIcon'
+import ScrambleText from '../../ScrambleText'
+
+import useMediaQuery from 'src/shared/hooks/useMediaQuery'
 
 import styles from './AbilitiesCardHeader.module.css'
-import ScrambleText from '../../ScrambleText'
 
 type AbilitiesCardHeaderProps = {
   title: string
@@ -13,21 +15,27 @@ type AbilitiesCardHeaderProps = {
 const AbilitiesCardHeader: FC<AbilitiesCardHeaderProps> = ({
   title,
   isLast,
-}) => (
-  <header className={styles['abilities-header']}>
-    {isLast ? <ScrambleText text='see' infinite /> : <p>{title}</p>}
-    <div className={styles['abilities-control-section']}>
-      <div className={styles['abilities-control']}>
-        <WindowControlIcon variant='minimize' size={16} />
+}) => {
+  const isMobile = useMediaQuery('(max-width: 959px)')
+
+  const controlIconSize = useMemo(() => (isMobile ? 12 : 16), [isMobile])
+
+  return (
+    <header className={styles['abilities-header']}>
+      {isLast ? <ScrambleText text='see' infinite /> : <p>{title}</p>}
+      <div className={styles['abilities-control-section']}>
+        <div className={styles['abilities-control']}>
+          <WindowControlIcon variant='minimize' size={controlIconSize} />
+        </div>
+        <div className={styles['abilities-control']}>
+          <WindowControlIcon variant='maximize' size={controlIconSize} />
+        </div>
+        <div className={styles['abilities-control']}>
+          <WindowControlIcon variant='close' size={controlIconSize} />
+        </div>
       </div>
-      <div className={styles['abilities-control']}>
-        <WindowControlIcon variant='maximize' size={16} />
-      </div>
-      <div className={styles['abilities-control']}>
-        <WindowControlIcon variant='close' size={16} />
-      </div>
-    </div>
-  </header>
-)
+    </header>
+  )
+}
 
 export default AbilitiesCardHeader

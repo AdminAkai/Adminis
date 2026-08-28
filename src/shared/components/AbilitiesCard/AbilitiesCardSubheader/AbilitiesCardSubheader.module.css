@@ -18,3 +18,9 @@
   text-decoration: underline;
   text-underline-offset: 1px;
 }
+
+@media screen and (max-width: 959px) {
+  .abilities-subheader {
+    font-size: 12px;
+  }
+}

@@ -12,3 +12,11 @@
 .abilities-card-section article:last-of-type {
   filter: invert() !important;
 }
+
+@media screen and (max-width: 959px) {
+  .abilities-card-section {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 180px;
+  }
+}

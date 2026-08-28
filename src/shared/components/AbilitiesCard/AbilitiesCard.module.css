@@ -10,8 +10,8 @@
   opacity: 1;
   transform: none;
   font-size: 2rem;
-  height: 480px;
-  width: 600px;
+  height: clamp(240px, 480px, 640px);
+  width: clamp(300px, 600px, 800px);
   background-color: var(--windows-gray);
   padding: 4px;
   border-radius: 1px;
@@ -54,4 +54,21 @@
   align-self: flex-start;
   font-size: 1rem;
   color: var(--dark-gray);
+}
+
+
+@media screen and (max-width: 959px) {
+  .abilities-card {
+    height: clamp(180px, 400px, 600px);
+    width: clamp(240px, 300px, 600px);
+    font-size: 1rem;
+  }
+  
+  .abilities-summary-header {
+    font-size: 1rem;
+  }
+
+  .abilities-summary-content {
+    font-size: 12px;
+  }
 }
