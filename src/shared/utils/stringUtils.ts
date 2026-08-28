@@ -186,3 +186,9 @@ export const getRandomWord = (word: string, lang: string): string => {
 
   return finalWord
 }
+
+export const getLastWord = (sentence: string): string[] => {
+  const splitSentence = sentence.split(' ')
+  const lastWord = splitSentence.splice(splitSentence.length - 1, 1)
+  return [lastWord[0], splitSentence.join(' ')]
+}

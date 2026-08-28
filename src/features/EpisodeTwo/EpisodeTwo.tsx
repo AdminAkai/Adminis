@@ -23,8 +23,12 @@ const EpisodeTwo: FC = () => {
 
   const AbilitiesCardsList = useMemo(
     () =>
-      AbilitiesCards.map((card) => (
-        <AbilitiesCard key={card.cardHeader} {...card} />
+      AbilitiesCards.map((card, i) => (
+        <AbilitiesCard
+          key={card.cardHeader}
+          {...card}
+          isLast={i === AbilitiesCards.length - 1}
+        />
       )),
     []
   )

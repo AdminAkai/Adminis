@@ -16,6 +16,7 @@
   padding: 4px;
   border-radius: 1px;
   font-family: 'Fixedsys Excelsior';
+  scroll-snap-align: center;
 }
 
 .abilities-summary-container {

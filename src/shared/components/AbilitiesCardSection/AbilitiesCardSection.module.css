@@ -8,3 +8,7 @@
   margin-top: 30dvh;
   margin-bottom: 30dvh;
 }
+
+.abilities-card-section article:last-of-type {
+  filter: invert() !important;
+}
