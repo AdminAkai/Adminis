@@ -18,27 +18,28 @@ const EpisodeOne: FC = () => {
 
   return (
     <Section>
-      <div className={styles['ep-two']}>
-        <div ref={ref} className={styles['ep-two-sector']}>
-          <h1 className={styles['ep-two-title']}>
-            [<ScrambleText text='Flow Control' startOnLoad={isInView} />
+      <div className={styles['ep-three']}>
+        <div ref={ref} className={styles['ep-three-sector']}>
+          <h1 className={styles['ep-three-title']}>
+            [<ScrambleText text='Integration' startOnLoad={isInView} />
             &nbsp;/&nbsp;Collaborate]
           </h1>
-          <div className={styles['ep-two-subtitle']}>
-            ANY&nbsp;
+          <div className={styles['ep-three-subtitle']}>
+            CONNECTION&nbsp;
             <div>
-              <ScrambleText text='INTEGRATION' startOnLoad />
+              <ScrambleText text='HANDSHAKE' startOnLoad />
               &#46;
             </div>
           </div>
-          <div className={styles['ep-two-tag']}>
+          <div className={styles['ep-three-tag']}>
             <ScrambleText
-              text='One obsessor. Many obsessions.'
+              text='Any protocols, all written negotiations.'
               startOnLoad
               lang={lang}
             />
           </div>
         </div>
+        <div className={styles['ep-three-sector']}>test</div>
       </div>
       <PageMark>WORK / EP-03</PageMark>
     </Section>
