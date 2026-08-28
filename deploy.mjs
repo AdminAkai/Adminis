@@ -5,7 +5,7 @@ const { S3_BUCKET, CLOUDFRONT_DISTRIBUTION_ID } = process.env
 if (!S3_BUCKET || !CLOUDFRONT_DISTRIBUTION_ID) {
   console.error(
     'Missing S3_BUCKET or CLOUDFRONT_DISTRIBUTION_ID.\n' +
-    'Make sure your .env file is present and dotenv-cli is loading it.'
+      'Make sure your .env file is present and dotenv-cli is loading it.'
   )
   process.exit(1)
 }
@@ -23,8 +23,10 @@ run('aws', ['s3', 'sync', 'dist', `s3://${S3_BUCKET}`, '--delete'])
 run('aws', [
   'cloudfront',
   'create-invalidation',
-  '--distribution-id', CLOUDFRONT_DISTRIBUTION_ID,
-  '--paths', '/*',
+  '--distribution-id',
+  CLOUDFRONT_DISTRIBUTION_ID,
+  '--paths',
+  '/*',
 ])
 
 console.log('\nDeploy complete.')
