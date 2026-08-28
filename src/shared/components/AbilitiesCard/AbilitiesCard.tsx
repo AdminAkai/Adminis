@@ -1,9 +1,10 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 
 import styles from './AbilitiesCard.module.css'
-import { WindowControlIcon } from '../IconRenderer/icons/WindowControlIcon'
 import AbilitiesCardHeader from './AbilitiesCardHeader'
 import AbilitiesCardSubheader from './AbilitiesCardSubheader'
+import AbilitiesCardList from './AbilitiesCardList'
+import AbilitiesCardListItem from './AbilitiesCardListItem'
 
 export type AbilitiesCardType = {
   cardHeader: string
@@ -18,28 +19,27 @@ const AbilitiesCard: FC<AbilitiesCardType> = ({
   summaryContent,
   summaryListItems,
 }) => {
+  const listItems = useMemo(
+    () =>
+      summaryListItems.map((item) => (
+        <AbilitiesCardListItem key={item}>{item}</AbilitiesCardListItem>
+      )),
+    [summaryListItems]
+  )
+
   return (
     <div className={styles['abilities-card']}>
-      <AbilitiesCardHeader title='services#consulting-advisory' />
+      <AbilitiesCardHeader title={cardHeader} />
       <AbilitiesCardSubheader />
       <div className={styles['abilities-summary-container']}>
         <summary className={styles['abilities-summary']}>
           <h1 className={styles['abilities-summary-header']}>
-            Consulting & Advisory
+            {summaryHeader}
           </h1>
           <p className={styles['abilities-summary-content']}>
-            Decide what to build before it gets expensive. We pressure-test the
-            roadmap and define the outcome worth shipping.
+            {summaryContent}
           </p>
-          <ul className={styles['abilities-summary-list']}>
-            <li className={styles['abilities-summary-list-item']}>
-              Product Strategy
-            </li>
-            {/* <li>Roadmap and Priorities</li>
-            <li>Prototypes and MVPs</li>
-            <li>Competitive Teardowns</li>
-            <li>Architecture and Technical Review</li> */}
-          </ul>
+          <AbilitiesCardList>{listItems}</AbilitiesCardList>
         </summary>
       </div>
     </div>

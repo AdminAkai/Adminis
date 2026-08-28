@@ -54,22 +54,3 @@
   font-size: 1rem;
   color: var(--dark-gray);
 }
-
-.abilities-summary-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 1rem;
-  flex-direction: column;
-  width: 100%;
-  padding: 0;
-}
-
-.abilities-summary-list-item {
-  width: 100%;
-  font-size: 1rem;
-  list-style: inside;
-  margin: 0;
-  padding: 8px;
-  color: var(--dark-gray)
-}
