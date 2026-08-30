@@ -39,7 +39,37 @@ const EpisodeOne: FC = () => {
             />
           </div>
         </div>
-        <div className={styles['ep-three-sector']}>test</div>
+        <div className={styles['ep-three-sector']}>
+          <div className={styles['connection-cards']}>
+            <div
+              style={{
+                border: '1px solid white',
+              }}
+            >
+              <article>
+                <header>1099</header>
+              </article>
+            </div>
+            <div
+              style={{
+                border: '1px solid white',
+              }}
+            >
+              <article>
+                <header>W2</header>
+              </article>
+            </div>
+            <div
+              style={{
+                border: '1px solid white',
+              }}
+            >
+              <article>
+                <header>C2C</header>
+              </article>
+            </div>
+          </div>
+        </div>
       </div>
       <PageMark>WORK / EP-03</PageMark>
     </Section>
