@@ -11,7 +11,7 @@
   min-height: 100%;
   color: var(--text-primary);
   text-align: center;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .ep-three-sector {
@@ -20,7 +20,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  transition: opacity 500ms ease;
   padding: 0 2rem;
 }
 
@@ -60,6 +59,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.connection-card {
+  border: 1px solid white;
+  width: 300px;
+  height: 420px;
+  transition: transform 0.5s ease;
+}
+
+.connection-card:hover {
+  transform: scale(1.2);
 }
 
 @media screen and (max-width: 959px) {
