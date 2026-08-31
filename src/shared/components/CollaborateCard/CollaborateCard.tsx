@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import BroadcastIcon from '../IconRenderer/icons/BroadcastIcon'
+
 import styles from './CollaborateCard.module.css'
 
 export type CollaborateCardProps = {
@@ -35,6 +37,7 @@ const CollaborateCard: FC<CollaborateCardProps> = ({
       // onClick={onCtaClick}
     >
       SIGNAL
+      <BroadcastIcon />
     </button>
   </div>
 )
