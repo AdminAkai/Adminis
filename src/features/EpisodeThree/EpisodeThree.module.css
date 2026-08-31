@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: auto;
   width: 100%;
   font-size: 8rem;
   min-height: 100%;
@@ -66,8 +67,6 @@
 @media screen and (max-width: 959px) {
   .ep-three {
     justify-content: center;
-    min-height: auto;
-    height: auto;
     font-size: 2rem;
     flex-direction: column;
     padding: 0;
@@ -75,7 +74,7 @@
   }
 
   .ep-three-sector {
-    height: auto;
+    min-height: 100dvh;
     width: 100%;
     scroll-snap-align: center;
     padding: 0 0 0 1rem;
@@ -95,8 +94,8 @@
   }
 
   .collaborate-cards {
-    height: auto;
     flex-direction: column;
-    margin-bottom: 30dvh;
+    padding-bottom: 172px;
+    margin: 0;
   }
 }

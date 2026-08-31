@@ -3,17 +3,21 @@ import { FC, useMemo, useState } from 'react'
 import PageMark from 'src/shared/components/PageMark/PageMark'
 import ScrambleText from 'src/shared/components/ScrambleText'
 import Section from 'src/shared/components/Section/Section'
+import CollaborateCard from 'src/shared/components/CollaborateCard'
 
 import { Language } from 'src/shared/redux/settingsSlice/settingsInitial'
 import { useAppSelector } from 'src/shared/redux/store'
 import { selectLanguage } from 'src/shared/redux/settingsSlice/settingsSelectors'
 
-import styles from './EpisodeThree.module.css'
+import useMediaQuery from 'src/shared/hooks/useMediaQuery'
 import useInView from 'src/shared/hooks/useInView'
-import CollaborateCard from 'src/shared/components/CollaborateCard'
+
 import { collaborateCards } from './lib'
 
+import styles from './EpisodeThree.module.css'
+
 const EpisodeOne: FC = () => {
+  const isMobile = useMediaQuery('(max-width: 959px)')
   const [ref, isInView] = useInView<HTMLDivElement>()
 
   const lang: Language = useAppSelector(selectLanguage)
@@ -33,7 +37,12 @@ const EpisodeOne: FC = () => {
   )
 
   return (
-    <Section>
+    <Section
+      style={{
+        height: isMobile ? 'auto' : '',
+        minHeight: isMobile ? 'auto' : '',
+      }}
+    >
       <div className={styles['ep-three']}>
         <div ref={ref} className={styles['ep-three-sector']}>
           <h1 className={styles['ep-three-title']}>
