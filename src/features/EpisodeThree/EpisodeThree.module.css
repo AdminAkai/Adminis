@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: auto;
   width: 100%;
   font-size: 8rem;
   min-height: 100%;
@@ -60,8 +59,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
   width: 100%;
+  gap: clamp(60px, 19vh, 180px);
 }
 
 @media screen and (max-width: 959px) {
@@ -76,7 +75,7 @@
   }
 
   .ep-three-sector {
-    height: 100dvh;
+    height: auto;
     width: 100%;
     scroll-snap-align: center;
     padding: 0 0 0 1rem;
@@ -88,9 +87,16 @@
 
   .ep-three-subtitle {
     font-size: 2rem;
+    flex-direction: column;
   }
 
   .ep-three-tag {
     font-size: 0.5rem;
+  }
+
+  .collaborate-cards {
+    height: auto;
+    flex-direction: column;
+    margin-bottom: 30dvh;
   }
 }

@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-height: 100dvh;
-  height: 100dvh;
+  height: auto;
   scroll-snap-align: start;
   display: flex;
   text-align: left;

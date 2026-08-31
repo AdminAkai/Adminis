@@ -86,3 +86,24 @@
   transform: translate(-50%, -50%) translateY(0);
   pointer-events: auto;
 }
+
+@media screen and (max-width: 959px) {
+  .collaborate-card {
+  width: clamp(240px, 300px, 360px);
+  height: clamp(300px, 360px, 420px);
+  font-size: 2rem;
+  scroll-snap-align: center;
+  }
+
+  .collaborate-card:hover {
+    transform: scale(1.05);
+  }
+
+  .collaborate-card summary {
+    font-size: 12px;
+  }
+
+  .collaborate-card footer {
+    font-size: 12px;
+  }
+}
