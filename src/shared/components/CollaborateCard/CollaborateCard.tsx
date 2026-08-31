@@ -29,6 +29,13 @@ const CollaborateCard: FC<CollaborateCardProps> = ({
       </div>
       <footer>{footer}</footer>
     </article>
+    <button
+      type='button'
+      className={styles['collaborate-card-cta']}
+      // onClick={onCtaClick}
+    >
+      SIGNAL
+    </button>
   </div>
 )
 
