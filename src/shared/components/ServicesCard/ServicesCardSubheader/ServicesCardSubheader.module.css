@@ -1,4 +1,4 @@
-.abilities-subheader {
+.services-subheader {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -10,17 +10,17 @@
   gap: 1rem;
 }
 
-.abilities-subheader p {
+.services-subheader p {
   letter-spacing: 0.02em;
 }
 
-.abilities-subheader span {
+.services-subheader span {
   text-decoration: underline;
   text-underline-offset: 1px;
 }
 
 @media screen and (max-width: 959px) {
-  .abilities-subheader {
+  .services-subheader {
     font-size: 12px;
   }
 }

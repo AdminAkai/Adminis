@@ -1,6 +1,6 @@
-import { AbilitiesCardType } from 'src/shared/components/AbilitiesCard'
+import { ServicesCardType } from 'src/shared/components/ServicesCard'
 
-export const AbilitiesCards: AbilitiesCardType[] = [
+export const ServicesCards: ServicesCardType[] = [
   {
     cardHeader: 'services#engineering',
     summaryHeader: 'Engineering',
@@ -16,7 +16,7 @@ export const AbilitiesCards: AbilitiesCardType[] = [
     cardHeader: 'services#consulting-advisory',
     summaryHeader: 'Consulting & Advisory',
     summaryContent:
-      'Decide what to build before it gets expensive. We pressure-test the roadmap and define the outcome worth shipping.',
+      'I can help you decide what to build before it gets too big or expensive. Together we can identify the roadmap and define the results we want to bring to market.',
     summaryListItems: [
       'Product strategies for making the next big thing a well built thing.',
       'Roadmap and priorities, what goes first and what does last.',

@@ -1,0 +1,117 @@
+.collaborate-card {
+  position: relative;
+  border: 1px solid var(--muted);
+  width: 360px;
+  height: 420px;
+  transition: transform 0.5s ease;
+  font-size: 4rem;
+  padding: 1rem;
+  background-color: var(--dark-gray);
+}
+
+.collaborate-card:hover {
+  transform: scale(1.1);
+}
+
+.collaborate-card:hover header {
+  background-color: var(--signalis-red);
+}
+
+.collaborate-card article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.collaborate-card div {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.collaborate-card header {
+  color: var(--lightest-gray);
+  background-color: var(--signalis-blue);
+  width: 100%;
+}
+
+.collaborate-card summary {
+  font-size: 1rem;
+  color: var(--lightest-gray);
+  text-align: left;
+}
+
+.collaborate-card footer {
+  justify-self: flex-end;
+  border-top: 1px solid var(--muted);
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.collaborate-card-cta {
+  position: absolute;
+  background-color: var(--signalis-red);
+  border: 1px solid var(--signalis-red);
+  box-shadow: 0 8px 28px 
+  color-mix(in oklch, var(--signalis-red) 18%, transparent);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  color: var(--dark-gray)
+}
+
+.collaborate-card:hover .collaborate-card-cta,
+.collaborate-card:focus-within .collaborate-card-cta {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+.collaborate-card-cta:visited {
+  text-decoration: none;
+  color: var(--dark-gray);
+}
+
+
+@media screen and (max-width: 959px) {
+  .collaborate-card {
+  width: 300px;
+  height: 400px;
+  font-size: 2rem;
+  scroll-snap-align: center;
+  }
+
+  .collaborate-card:hover {
+    transform: scale(1.05);
+  }
+
+  .collaborate-card summary {
+    font-size: 12px;
+  }
+
+  .collaborate-card footer {
+    font-size: 12px;
+  }
+}

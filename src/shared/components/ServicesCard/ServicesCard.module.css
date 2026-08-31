@@ -1,4 +1,4 @@
-.abilities-card {
+.services-card {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -19,13 +19,13 @@
   scroll-snap-align: center;
 }
 
-.abilities-summary-container {
+.services-summary-container {
   padding: 0 4px;
   height: 100%;
   width: 100%;
 }
 
-.abilities-summary {
+.services-summary {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -42,7 +42,7 @@
   1px 1px 0px var(--dark-gray) inset;
 }
 
-.abilities-summary-header {
+.services-summary-header {
   font-size: 2rem;
   width: 100%;
   color: var(--signalis-blue);
@@ -50,7 +50,7 @@
   color-mix(in oklch, var(--signalis-blue) 18%, transparent);
 }
 
-.abilities-summary-content {
+.services-summary-content {
   align-self: flex-start;
   font-size: 1rem;
   color: var(--dark-gray);
@@ -58,17 +58,17 @@
 
 
 @media screen and (max-width: 959px) {
-  .abilities-card {
+  .services-card {
     height: clamp(180px, 480px, 600px);
     width: clamp(240px, 300px, 600px);
     font-size: 1rem;
   }
   
-  .abilities-summary-header {
+  .services-summary-header {
     font-size: 1rem;
   }
 
-  .abilities-summary-content {
+  .services-summary-content {
     font-size: 12px;
   }
 }

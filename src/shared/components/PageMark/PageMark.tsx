@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, FC, HTMLAttributes, PropsWithChildren } from 'react'
+import { DetailedHTMLProps, FC, HTMLAttributes } from 'react'
 
 import styles from './PageMark.module.css'
 

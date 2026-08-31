@@ -5,32 +5,29 @@ import ScrambleText from '../../ScrambleText'
 
 import useMediaQuery from 'src/shared/hooks/useMediaQuery'
 
-import styles from './AbilitiesCardHeader.module.css'
+import styles from './ServicesCardHeader.module.css'
 
-type AbilitiesCardHeaderProps = {
+type ServicesCardHeaderProps = {
   title: string
   isLast?: boolean
 }
 
-const AbilitiesCardHeader: FC<AbilitiesCardHeaderProps> = ({
-  title,
-  isLast,
-}) => {
+const ServicesCardHeader: FC<ServicesCardHeaderProps> = ({ title, isLast }) => {
   const isMobile = useMediaQuery('(max-width: 959px)')
 
   const controlIconSize = useMemo(() => (isMobile ? 12 : 16), [isMobile])
 
   return (
-    <header className={styles['abilities-header']}>
+    <header className={styles['services-header']}>
       {isLast ? <ScrambleText text='see' infinite /> : <p>{title}</p>}
-      <div className={styles['abilities-control-section']}>
-        <div className={styles['abilities-control']}>
+      <div className={styles['services-control-section']}>
+        <div className={styles['services-control']}>
           <WindowControlIcon variant='minimize' size={controlIconSize} />
         </div>
-        <div className={styles['abilities-control']}>
+        <div className={styles['services-control']}>
           <WindowControlIcon variant='maximize' size={controlIconSize} />
         </div>
-        <div className={styles['abilities-control']}>
+        <div className={styles['services-control']}>
           <WindowControlIcon variant='close' size={controlIconSize} />
         </div>
       </div>
@@ -38,4 +35,4 @@ const AbilitiesCardHeader: FC<AbilitiesCardHeaderProps> = ({
   )
 }
 
-export default AbilitiesCardHeader
+export default ServicesCardHeader

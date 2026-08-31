@@ -1,4 +1,4 @@
-.abilities-summary-list-item {
+.services-summary-list-item {
   width: 100%;
   font-size: 1rem;
   list-style: inside;
@@ -8,7 +8,7 @@
 
 
 @media screen and (max-width: 959px) {
-  .abilities-summary-list-item {
+  .services-summary-list-item {
     font-size: 12px;
   }
 }

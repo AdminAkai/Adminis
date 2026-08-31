@@ -3,8 +3,8 @@ import { CSSProperties, FC, useMemo } from 'react'
 import PageMark from 'src/shared/components/PageMark/PageMark'
 import Section from 'src/shared/components/Section/Section'
 import ScrambleText from 'src/shared/components/ScrambleText'
-import AbilitiesCard from 'src/shared/components/AbilitiesCard'
-import AbilitiesCardSection from 'src/shared/components/AbilitiesCardSection'
+import ServicesCard from 'src/shared/components/ServicesCard'
+import ServicesCardSection from 'src/shared/components/ServicesCardSection'
 
 import useInView from 'src/shared/hooks/useInView'
 import useMediaQuery from 'src/shared/hooks/useMediaQuery'
@@ -13,7 +13,7 @@ import { Language } from 'src/shared/redux/settingsSlice/settingsInitial'
 import { useAppSelector } from 'src/shared/redux/store'
 import { selectLanguage } from 'src/shared/redux/settingsSlice/settingsSelectors'
 
-import { AbilitiesCards } from './lib'
+import { ServicesCards } from './lib'
 
 import styles from './EpisodeTwo.module.css'
 
@@ -23,13 +23,13 @@ const EpisodeTwo: FC = () => {
   const isMobile = useMediaQuery('(max-width: 959px)')
   const [ref, isInView] = useInView<HTMLDivElement>()
 
-  const AbilitiesCardsList = useMemo(
+  const ServicesCardsList = useMemo(
     () =>
-      AbilitiesCards.map((card, i) => (
-        <AbilitiesCard
+      ServicesCards.map((card, i) => (
+        <ServicesCard
           key={card.cardHeader}
           {...card}
-          isLast={i === AbilitiesCards.length - 1}
+          isLast={i === ServicesCards.length - 1}
         />
       )),
     []
@@ -54,8 +54,8 @@ const EpisodeTwo: FC = () => {
       <div ref={ref} className={styles['ep-two']}>
         <div className={styles['ep-two-sector']} style={titleSectionStyles}>
           <h1 className={styles['ep-two-title']}>
-            [<ScrambleText text='Abilities' startOnLoad={isInView} />
-            &nbsp; /&nbsp;Services]
+            [<ScrambleText text='Adaptive' startOnLoad={isInView} />
+            &nbsp;/&nbsp;Services]
           </h1>
           <div className={styles['ep-two-subtitle']}>
             WHAT I CAN DO FOR&nbsp;
@@ -72,7 +72,7 @@ const EpisodeTwo: FC = () => {
             />
           </div>
         </div>
-        <AbilitiesCardSection>{AbilitiesCardsList}</AbilitiesCardSection>
+        <ServicesCardSection>{ServicesCardsList}</ServicesCardSection>
       </div>
       <PageMark>SERVICES / EP-02</PageMark>
     </Section>
