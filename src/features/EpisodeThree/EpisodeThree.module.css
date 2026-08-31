@@ -61,7 +61,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: clamp(60px, 19vh, 180px);
+  gap: 4rem;
 }
 
 @media screen and (max-width: 959px) {

@@ -36,6 +36,16 @@ const EpisodeOne: FC = () => {
     [collaborateCards]
   )
 
+  const newConnectionTextStyle = useMemo(() => {
+    if (connectionName !== 'HANDSHAKE')
+      return {
+        color: 'var(--signalis-red)',
+      }
+    return {
+      color: 'var(--signalis-blue)',
+    }
+  }, [connectionName])
+
   return (
     <Section
       style={{
@@ -46,13 +56,22 @@ const EpisodeOne: FC = () => {
       <div className={styles['ep-three']}>
         <div ref={ref} className={styles['ep-three-sector']}>
           <h1 className={styles['ep-three-title']}>
-            [<ScrambleText text='Integration' startOnLoad={isInView} />
+            [
+            <ScrambleText
+              text='Integration'
+              startOnLoad={isInView}
+              style={newConnectionTextStyle}
+            />
             &nbsp;/&nbsp;Collaborate]
           </h1>
           <div className={styles['ep-three-subtitle']}>
             CONNECTION&nbsp;
             <div>
-              <ScrambleText text={connectionName} startOnLoad />
+              <ScrambleText
+                text={connectionName}
+                startOnLoad
+                style={newConnectionTextStyle}
+              />
               &#46;
             </div>
           </div>
