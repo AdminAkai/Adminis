@@ -42,6 +42,7 @@
   text-shadow: 0 8px 28px 
   color-mix(in oklch, var(--lightest-gray) 18%, transparent);
   color: var(--lightest-gray);
+  width: 100%;
 }
 
 .ep-three-subtitle span {
@@ -55,46 +56,12 @@
   letter-spacing: 0.16em;
 }
 
-.connection-cards {
+.collaborate-cards {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4rem;
   width: 100%;
-}
-
-.connection-card {
-  border: 1px solid var(--muted);
-  width: 300px;
-  height: 420px;
-  transition: transform 0.5s ease;
-  font-size: 4rem;
-  padding: 1rem;
-}
-
-.connection-card:hover {
-  transform: scale(1.2);
-}
-
-.connection-card article {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-
-.connection-card summary {
-  font-size: 1rem;
-}
-
-.connection-card footer {
-  border-top: 1px solid var(--muted);
-  font-size: 12px;
-  text-align: left;
-  width: 100%;
-  padding: 1rem 0;
 }
 
 @media screen and (max-width: 959px) {

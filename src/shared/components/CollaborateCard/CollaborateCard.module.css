@@ -1,0 +1,51 @@
+.collaborate-card {
+  border: 1px solid var(--muted);
+  width: 360px;
+  height: 420px;
+  transition: transform 0.5s ease;
+  font-size: 4rem;
+  padding: 1rem;
+  background-color: var(--dark-gray);
+}
+
+.collaborate-card:hover {
+  transform: scale(1.1);
+}
+
+.collaborate-card article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.collaborate-card div {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.collaborate-card header {
+  color: var(--lightest-gray);
+  background-color: var(--signalis-blue);
+  width: 100%;
+}
+
+.collaborate-card summary {
+  font-size: 1rem;
+  color: var(--lightest-gray);
+  text-align: left;
+}
+
+.collaborate-card footer {
+  justify-self: flex-end;
+  border-top: 1px solid var(--muted);
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+  padding: 1rem 0;
+}
