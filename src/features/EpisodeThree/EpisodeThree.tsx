@@ -44,16 +44,34 @@ const EpisodeOne: FC = () => {
             <div className={styles['connection-card']}>
               <article>
                 <header>1099</header>
-              </article>
-            </div>
-            <div className={styles['connection-card']}>
-              <article>
-                <header>W2</header>
+                <summary>
+                  Best for a focused problem or a few solutions. Independent
+                  contributor for when you just need stuff done.
+                </summary>
+                <footer>PROTOCOL: INDEPENDENT CONTRACTOR</footer>
               </article>
             </div>
             <div className={styles['connection-card']}>
               <article>
                 <header>C2C</header>
+                <summary>
+                  Different legal weight, more responsibility. I can contract
+                  with you and invoice your business directly, or through an
+                  intermediary. When you need someone with more ownership and
+                  direction over a product than just some work done.
+                </summary>
+                <footer>PROTOCOL: BUSINESS-TO-BUSINESS</footer>
+              </article>
+            </div>
+            <div className={styles['connection-card']}>
+              <article>
+                <header>W2</header>
+                <summary>
+                  For when you need someone really embedded into the team.
+                  Whether through an agency or directly with you, when there's a
+                  lot of stuff to build, for a long time.
+                </summary>
+                <footer>PROTOCOL: EMPLOYEE-OF-RECORD</footer>
               </article>
             </div>
           </div>

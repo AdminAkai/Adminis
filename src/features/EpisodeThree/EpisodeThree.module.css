@@ -64,14 +64,37 @@
 }
 
 .connection-card {
-  border: 1px solid white;
+  border: 1px solid var(--muted);
   width: 300px;
   height: 420px;
   transition: transform 0.5s ease;
+  font-size: 4rem;
+  padding: 1rem;
 }
 
 .connection-card:hover {
   transform: scale(1.2);
+}
+
+.connection-card article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.connection-card summary {
+  font-size: 1rem;
+}
+
+.connection-card footer {
+  border-top: 1px solid var(--muted);
+  font-size: 12px;
+  text-align: left;
+  width: 100%;
+  padding: 1rem 0;
 }
 
 @media screen and (max-width: 959px) {
