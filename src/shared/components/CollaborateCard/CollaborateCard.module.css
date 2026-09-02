@@ -114,4 +114,8 @@
   .collaborate-card footer {
     font-size: 12px;
   }
+
+  .collaborate-card-cta {
+    display: none;
+  }
 }

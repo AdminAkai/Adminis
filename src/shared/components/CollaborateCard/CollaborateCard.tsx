@@ -3,7 +3,7 @@ import { FC, useRef, MouseEvent } from 'react'
 import BroadcastIcon from '../IconRenderer/icons/BroadcastIcon'
 
 import styles from './CollaborateCard.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ScrambleText from '../ScrambleText'
 
 export type CollaborateCardProps = {
@@ -21,7 +21,11 @@ const CollaborateCard: FC<CollaborateCardProps> = ({
   summary,
   footer,
 }) => {
-  const ctaRef = useRef<HTMLAnchorElement>(null)
+  const ctaRef = useRef<HTMLButtonElement>(null)
+
+  const navigate = useNavigate()
+
+  const redirectToTransmission = () => navigate('/transmission')
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const el = e.currentTarget
@@ -48,6 +52,7 @@ const CollaborateCard: FC<CollaborateCardProps> = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onMouseMove={handleMouseMove}
+      onClick={redirectToTransmission}
     >
       <article>
         <div>
@@ -56,14 +61,10 @@ const CollaborateCard: FC<CollaborateCardProps> = ({
         </div>
         <footer>{footer}</footer>
       </article>
-      <Link
-        ref={ctaRef}
-        to='/transmission'
-        className={styles['collaborate-card-cta']}
-      >
+      <button ref={ctaRef} className={styles['collaborate-card-cta']}>
         <ScrambleText text='CONNECT' startOnLoad />
         <BroadcastIcon />
-      </Link>
+      </button>
     </div>
   )
 }
